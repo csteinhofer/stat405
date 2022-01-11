@@ -44,8 +44,8 @@ sin(pi/2) + log(12) - 45^(1/3) + sqrt(2)
 
 
 # Begin solution ----------------------------------------------------------
-
-
+(-5 + sqrt(5**2 - 4*(1)*(6)))/2
+(-5 - sqrt(5**2 - 4*(1)*(6)))/2
 # End solution ------------------------------------------------------------
 
 
@@ -84,7 +84,12 @@ M
 
 
 # Begin solution ----------------------------------------------------------
+quad <- function(a, b, c) {
+  roots <- c((-b + sqrt(b**2 - 4*(a)*(c)))/2*a,(-b - sqrt(b**2 - 4*(a)*(c)))/2*a)
+  return(roots)
+}
 
+quad(1, -5, 6)
 
 # End solution ------------------------------------------------------------
 
@@ -233,7 +238,18 @@ str(a)
 
 # Begin solution ----------------------------------------------------------
 
+a <- as.numeric(a)
+str(a)
 
+a <- as.complex(a)
+str(a)
+
+a <- as.character(a)
+str(a)
+
+a <- as.numeric(a)
+str(a)
+#no -- the strings representing complex numbers are not coerced into numeric values
 # End solution ------------------------------------------------------------
 
 
@@ -261,8 +277,12 @@ a * b ## BE AWARE: R recicles [even fractionally]
 
 
 # Begin solution ----------------------------------------------------------
+quad <- function(a, b, c) {
+  roots <- c((-b + c(1,-1)* sqrt(b**2 - 4*(a)*(c)))/2*a)
+  return(roots)
+}
 
-
+quad(1,-5,6)
 # End solution ------------------------------------------------------------
 
 
