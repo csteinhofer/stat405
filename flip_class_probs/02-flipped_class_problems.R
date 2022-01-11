@@ -20,6 +20,14 @@ b <- c(-3,  2,  5)
 
 
 ## * Begin solution
+a %*% b
+
+inner_product <- function(a, b){
+  sum(a * b)
+}
+
+inner_product(a,b)
+
 ## * End solution
 
 
@@ -30,6 +38,10 @@ b <- c(-3,  2,  5)
 
 
 ## * Begin solution
+vect_norm <- function(a){
+  sqrt(inner_product(a,a))
+}
+vect_norm(a)
 ## * End solution
 
 
@@ -40,6 +52,10 @@ b <- c(-3,  2,  5)
 
 
 ## * Begin solution
+taxicab_norm <- function(a) {
+  sum(abs(a))
+}
+
 ## * End solution
 
 
@@ -49,6 +65,12 @@ b <- c(-3,  2,  5)
 ##    https://en.wikipedia.org/wiki/Norm_(mathematics)#p-norm
 
 ## * Begin solution
+p_norm <- function(a, p) {
+  sum(abs(a)**p)**(1/p)
+}
+
+p_norm(a,2)
+
 ## * End solution
 
 
@@ -59,6 +81,10 @@ b <- c(-3,  2,  5)
 
 
 ## * Begin solution
+max_norm <- function(a) {
+  max(abs(a))
+}
+max_norm(a)
 ## * End solution
 
 
@@ -69,6 +95,9 @@ b <- c(-3,  2,  5)
 
 
 ## * Begin solution
+minkowski_dist <- function(a,b,p){
+  sum(abs(a-b)**p)**(1/p)
+}
 ## * End solution
 
 
@@ -81,6 +110,17 @@ set.seed(1)
 
 
 ## * Begin solution
+#cu sum 
+cumsum(x)
+
+#cu prod
+cumprod(x)
+
+#cu min
+cummin(x)
+
+#cu max
+cummax(x)
 ## * End solution
 
 
@@ -96,6 +136,12 @@ x <- rgamma(200, shape = 3, rate = 2) ## random variates from a gamma distr.
 
 
 ## * Begin solution
+cu
+plot(x, , main="Cumulative density graph",xlab="Random variable",ylab="Cumulative density values",
+     xlim = c(0,1),ylim = c(0,1))
+
+
+plot(pgamma(x, 3))
 ## * End solution
 
 
@@ -140,6 +186,7 @@ sheight
 
 
 ## * Begin solution
+
 ## * End solution
 
 
