@@ -1,0 +1,302 @@
+\documentclass[10pt]{article}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\begin{document}
+
+
+\title{R and Latex using knitr}
+\author{Your Name}
+\maketitle
+\tableofcontents
+
+% Comments in latex start with a %
+%\setlength{\parindent}{0pt}
+% Sections and subsections in Latex
+\section{Introduction to Latex}
+\subsection{First concepts}
+This is important.
+This too.
+
+% Paragraphs are separated by a blank line
+This is in another line.
+
+If you need some vertical spacing: \vskip 20pt
+
+
+What happens if you are typing a very very very long line with lots very interesting and deep concepts that need to end eventually.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+
+
+
+% Bullet points in Latex
+I have a list:
+\begin{itemize}
+\item Soap
+\item Ham
+  \begin{itemize}
+  \item one item
+  \item other item
+  \end{itemize}
+\item Sushi
+  \begin{enumerate}
+  \item one item
+  \item other item
+  \end{enumerate}
+\end{itemize}
+
+\section{Other stuff}
+\begin{enumerate}
+\item Soap
+\item Ham
+\item Sushi
+\end{enumerate}
+
+\section{Tables}
+
+% This will be a table.
+\begin{tabular}{lcr}
+qwer   & 3    & kajsf \\
+fsdflj & -234 & nmsfadj ajf \\
+vhsdf  & 2    & fsf
+\end{tabular}
+
+\subsection{With vertical lines}
+\begin{tabular}{|l|c|r|}
+\hline
+title 1 & title 2 & title 3 \\
+\hline
+qwer   & 3    & kajsf \\
+fsdflj & -234 & nmsfadj ajf \\
+vhsdf  & 2    & fsf \\
+\hline
+\end{tabular}
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|l|c|r|}
+    \hline
+ Title1 & Title2 & Title3 \\
+   \hline
+ qlkr & 3 & afsdkj \\
+ hfskjdf & -3 & \%kfsldkf \\
+   \hline
+  \end{tabular}
+  \caption{My first table}\label{tab:first}
+\end{table}
+
+\begin{table}[h]
+  \centering
+        \begin{tabular}{|l|l|l|}
+          \hline
+          Distribution 	    & R name   & Arguments \\
+          \hline
+          beta 	            & beta     & shape1, shape2, ncp \\
+          binomial 	    & binom    & size, prob \\
+          Cauchy 	    & cauchy   & location, scale \\
+          chi-squared       & chisq    & df, ncp \\
+          exponential       & exp      & rate \\
+          F 	            & f        & df1, df2, ncp \\
+          gamma 	    & gamma    & shape, scale \\
+          geometric 	    & geom     & prob \\
+          hypergeometric    & hyper    & m, n, k \\
+          log-normal 	    & lnorm    & meanlog, sdlog \\
+          logistic 	    & logis    & location, scale \\
+          negative binomial & nbinom   & size, prob \\
+          normal 	    & norm     & mean, sd \\
+          Poisson 	    & pois     & lambda \\
+          signed rank 	    & signrank & n \\
+          Student's t 	    & t        & df, ncp \\
+          uniform 	    & unif     & min, max \\
+          Weibull 	    & weibull  & shape, scale \\
+          Wilcoxon 	    & wilcox   & m, n \\
+          \hline
+        \end{tabular}
+        \vskip 10pt
+        Table copied verbatim from \href{http://cran.r-project.org/doc/manuals/R-intro.html#R-as-a-set-of-statistical-tables}{\color{green}here}.
+  \caption{R statistical distributions}\label{tab:r-stat-dist}
+\end{table}
+
+As we are showing in table \ref{tab:first} an table \ref{tab:r-stat-dist}
+
+
+
+\section{Some math}
+As we see $(a+b)^2 = a^2 + 2ab + b^2$, unless you disagree. So, $a+b = \pm \sqrt{a^2 + 2ab + b^2}$. 
+
+\begin{equation}
+(a+b)^2 = a^2 + 2ab + b^2
+\end{equation}
+
+\begin{equation*}
+\frac{\frac{1}{x}+\frac{1}{y}}{y-z}
+\end{equation*}
+
+\begin{gather}
+  a x^2 + b x + c = 0 \\
+  x^2 + 2\frac{b}{2a} x + \frac{c}{a} = 0 \\
+  x^2 + 2\frac{b}{2a} x + \frac{b^2}{4a^2} - \frac{b^2}{4a^2}+ \frac{c}{a} = 0\label{eq:sumsubs} \\
+  \left(x+\frac{b}{2a}\right)^2 = \frac{b^2}{4a^2}- \frac{c}{a} \\
+  \left(x+\frac{b}{2a}\right)^2 = \frac{b^2-4ac}{4a^2} \\
+  x_{1,2}+\frac{b}{2a} = \pm \frac{\sqrt{b^2-4ac}}{2a} \\
+  x_{1,2}= \frac{-b\pm\sqrt{b^2-4ac}}{2a}
+\end{gather}
+
+How about greek letters, such as $\alpha$.
+
+\section{Citations}
+Citations are done this way\cite{gillespie1977,wilkinson2006,kierzek2002}. At the end
+of the documents is the bibliography.
+
+\section{Plots}
+How to include an external pdf:
+%\includegraphics[page=1,width=.5\textwidth]{figures/MyPlot.pdf}
+
+How to include an external png:
+%\includegraphics[width=.5\textwidth]{figures/test.png}
+
+Use a float:
+\begin{figure}[h]
+%\includegraphics[page=1,width=1\textwidth]{figures/MyPlot.pdf}
+\caption{Important Figure}\label{fig:myplot}
+\end{figure}
+
+You can create a reference to Figure \ref{fig:myplot} like this.
+
+
+\section{Minipages}
+
+\begin{minipage}{0.39\textwidth}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\end{minipage}
+\begin{minipage}{0.04\textwidth}
+~
+\end{minipage}
+\begin{minipage}{0.57\textwidth}
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+\end{minipage}
+
+\section{Embedding R code using knitr}
+
+Using knitr tags to embed R code. It shows both code and output:
+<<>>=
+## This is a comment.
+1+1
+@
+
+If you want to hide the code and show the output:
+<<echo=FALSE>>=
+## This is a comment. Should not appear.
+1+2
+@
+
+If you want to show code and hide output
+<<results='hide'>>=
+b <- 2+8
+b+7
+@
+
+If you want to hide code and output:
+<<echo=FALSE,results='hide'>>=
+a <- 2+2
+a
+@
+Nothing was shown above this...
+
+\vskip 20pt
+
+If you want to show only parts of the code:
+<<echo=c(2,3)>>=
+## This is a comment. Should not appear.
+b <- 2+8
+b+7
+@
+
+You can also use negative indexes:
+<<echo=-1>>=
+## This is a comment. Should not appear.
+b <- 2+8
+b+7
+@
+
+If you want to embed R code in your paragraph, you can
+use the following:
+
+After calculation, we get that $a=\Sexpr{a}$. Which is a good result. We do not need the dollar sign to get the \Sexpr{a+1}.
+
+
+You can have plots performed by R directly inserted, without having
+to import them as external files
+<<echo=TRUE,results='hide'>>=
+hist(rnorm(500))
+@
+
+
+<<echo=FALSE,fig.width=8,fig.height=4>>=
+hist(rnorm(500))
+@
+
+\begin{center}
+<<echo=FALSE,fig.width=8,fig.height=4,out.width="0.5\\textwidth">>=
+hist(rnorm(500))
+@
+\end{center}
+
+\begin{center}
+<<echo=FALSE,fig.width=6,fig.height=3,out.width="0.5\\textwidth">>=
+hist(rnorm(500))
+@
+\end{center}
+
+\begin{center}
+<<echo=FALSE,fig.width=4,fig.height=2,out.width="0.5\\textwidth">>=
+hist(rnorm(500))
+@
+\end{center}
+
+The results of our calculations are shown in Figure \ref{fig:histog}.
+
+\begin{figure}[h]
+<<echo=FALSE,fig.width=8,fig.height=4>>=
+hist(rnorm(500))
+@
+\caption{Important Histogram}\label{fig:histog}
+\end{figure}
+
+
+<<echo=FALSE>>=
+data(CO2)
+head(CO2)
+@
+
+\pagebreak
+Using xtable
+<<results='asis'>>=
+library(xtable)
+xtable(head(CO2),caption='CO2 table', label='tab:CO2')
+@
+
+As Table \ref{tab:CO2} shows, ...
+
+\begin{thebibliography}{1}
+\bibitem{gillespie1977} Gillespie D: \textbf{Exact stochastic simulation of coupled chemical
+  reactions}. \emph{J. Phys. Chem.} 1977, \textbf{81}(25):2340--2361.
+
+\bibitem{wilkinson2006} Wilkinson D: \emph{Stochastic modelling for systems biology}. Mathematical and
+  Computational Biology Series, Chapman \& Hall/CRC 2006.
+
+\bibitem{kierzek2002} Kierzek AM: \textbf{STOCKS: STOChastic Kinetic Simulations of biochemical
+  systems with Gillespie algorithm}. \emph{Bioinformatics} 2002,
+  \textbf{18}(3):470--481.
+
+\bibitem{hoops2006} Hoops S, Sahle S, Gauges R, Lee C, Pahle J, Simus N, Singhal M, Xu L, Mendes P,
+  Kummer U: \textbf{COPASI--a COmplex PAthway SImulator.} \emph{Bioinformatics}
+  2006, \textbf{22}(24):3067--74,
+  [http://www.ncbi.nlm.nih.gov/pubmed/17032683.
+\end{thebibliography}
+\end{document}

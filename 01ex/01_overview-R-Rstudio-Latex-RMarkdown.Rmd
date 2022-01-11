@@ -1,0 +1,147 @@
+---
+title: "Lecture 1: Overview. R and Rstudio, and Latex installation. R Markdown."
+author: "Roberto Bertolusso"
+date: ''
+output:
+  html_document: default
+  pdf_document: default
+  word_document: default
+fontsize: 10pt
+geometry: margin=1in
+---
+
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# Hello
+
+## Install R, RStudio, and latex
+
+### For Windows:
+http://www.reed.edu/data-at-reed/software/R/r_studio_pc.html
+
+### For Mac:
+http://www.reed.edu/data-at-reed/software/R/r_studio.html
+
+## Cheatsheet of rmarkdown:
+https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf
+
+## Options for knitr:
+https://yihui.name/knitr/options/
+
+<h1>Hello</h1>
+
+# Main section
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+## Subsection
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+### Subsubsection
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+## Unordered Lists
+
+
+* Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+* Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    * Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    * Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+## Ordered Lists
+
+1. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+1. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    1. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    1. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+1. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+1. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+    * Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+    * Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+1. Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+
+### Tables
+
+|A        | B  |  C| D|
+|:---|:---:|---:|:---:| 
+|A+ $\geq 98$ | B+  $\geq 87$ | C+ $\geq 77$ | D+ $\geq 67$ |
+|A  $\geq 94$ | B   $\geq 83$ | C  $\geq 73$ | D  $\geq 63$ |
+|A-  $\geq 90$ | B- $\geq 80$ | C- $\geq 70$ | D- $\geq 60$ |
+
+
+### Latex formulas
+$$
+\begin{split}
+  a x^2 + b x + c = 0 \\
+  x^2 + 2\frac{b}{2a} x + \frac{c}{a} = 0 \\
+  x^2 + 2\frac{b}{2a} x + \frac{b^2}{4a^2} - \frac{b^2}{4a^2}+ \frac{c}{a} = 0\label{eq:sumsubs} \\
+  \left(x+\frac{b}{2a}\right)^2 = \frac{b^2}{4a^2}- \frac{c}{a} \\
+  \left(x+\frac{b}{2a}\right)^2 = \frac{b^2-4ac}{4a^2} \\
+  x_{1,2}+\frac{b}{2a} = \pm \frac{\sqrt{b^2-4ac}}{2a} \\
+  x_{1,2}= \frac{-b\pm\sqrt{b^2-4ac}}{2a}
+\end{split}
+$$
+
+## Including R code
+
+```{r, echo=FALSE, results='hide'}
+data(CO2)
+(rowcol <- dim(CO2))
+```
+
+Data CO2 has `r rowcol[1]` observations and `r rowcol[2]` variables.
+
+This is an R  Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+## Using html directly
+With markdown you cannot change the color of the text (the last time I checked). However, if you know html, you can use it directly as follows: <span style="color:green">Something in green</span>
+
+If you want to use, say, two columns, you could do:
+<table><tr><td>
+<div style="text-align:center">
+```{r, echo=FALSE}
+plot(pressure)
+```
+</div>
+</td><td>
+* Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+* Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    * Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    * Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</td></tr></table>
+
+```{r, echo=FALSE}
+knitr::kable(head(CO2))
+```
+<center>
+![Something](figures/test.jpeg){width=100%}
+</center>
+
+```{r}
+head(CO2)
+```
