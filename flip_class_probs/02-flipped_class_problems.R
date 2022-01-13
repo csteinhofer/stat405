@@ -136,12 +136,16 @@ x <- rgamma(200, shape = 3, rate = 2) ## random variates from a gamma distr.
 
 
 ## * Begin solution
-cu
-plot(x, , main="Cumulative density graph",xlab="Random variable",ylab="Cumulative density values",
-     xlim = c(0,1),ylim = c(0,1))
+
+library(pracma)
+
+plot(cumtrapz(x, seq(0, 200)))
 
 
-plot(pgamma(x, 3))
+
+curve(pgamma(x, 3, 2), 0, 200, lwd=2, ylab="CDF")
+
+
 ## * End solution
 
 
@@ -186,6 +190,10 @@ sheight
 
 
 ## * Begin solution
+sample_i <- sample(1:length(fheight), 20)
+
+fheight[sample_i]
+
 
 ## * End solution
 
@@ -198,6 +206,17 @@ sheight
 
 
 ## * Begin solution
+
+dif = fheight - sheight 
+
+dif <- abs(dif) >= 3
+fsub <- fheight[dif]
+ssub <- sheight[dif]
+sum(fsub>ssub) #77
+sum(ssub>fsub) #249
+
+
+
 ## * End solution
 
 
@@ -215,6 +234,26 @@ sheight
 ##       normal distribution. Use n = $1000$
 
 ## * Begin solution
+n = 1000
+x <- rnorm(n)
+
+
+
+#cutoff1
+cutoff <- mean(x) + c(1,-1)*sd(x)
+dif <- x > cutoff[2] & x < cutoff[1]
+sum(dif)/length(x)
+
+#cutoff2
+cutoff <- mean(x) + 2*c(1,-1)*sd(x)
+dif <- x > cutoff[2] & x < cutoff[1]
+sum(dif)/length(x)
+
+#cutoff 3
+cutoff <- mean(x) + 3*c(1,-1)*sd(x)
+dif <- x > cutoff[2] & x < cutoff[1]
+sum(dif)/length(x)
+
 ## * End solution
 
 
@@ -237,4 +276,20 @@ sales <- as.numeric(BJsales)
 
 
 ## * Begin solution
+P_t <- sales[-1]
+P_t_min <- sales[-150]
+
+diff1 <-P_t - P_t_min
+#1
+diff1
+
+R_t <- round((P_t - P_t_min)/P_t_min, 4)
+r_t <-  round(log(P_t/P_t_min), 4)
+
+#2
+R_t
+
+#3
+r_t
+
 ## * End solution
