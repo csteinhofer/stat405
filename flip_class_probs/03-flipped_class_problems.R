@@ -21,6 +21,10 @@ b <- c(-3, 2, 5)
 
 
 ## * Begin solution
+library(pracma)
+cross(a, b)
+
+matrix(c(a,b), nrow=2,ncol=3, byrow=T)
 ## * End solution
 
 
